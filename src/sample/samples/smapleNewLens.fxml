@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #A9A9A9;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.controllers.ControllerMain">
+    <children>
+        <AnchorPane prefHeight="400.0" prefWidth="150.0" style="-fx-background-color: #60860E;">
+            <children>
+                <Button fx:id="mainList_exit" layoutX="25.0" layoutY="324.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="100.0" text="Выход" textAlignment="CENTER" AnchorPane.bottomAnchor="25.0" />
+            </children>
+        </AnchorPane>
+    </children>
+</AnchorPane>
