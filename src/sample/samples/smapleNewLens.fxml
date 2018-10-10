@@ -1,14 +1,37 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #A9A9A9;" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.controllers.ControllerMain">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #A9A9A9;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.controllers.ControllerMain">
     <children>
         <AnchorPane prefHeight="400.0" prefWidth="150.0" style="-fx-background-color: #60860E;">
             <children>
             <Button fx:id="mainList_backToMain" layoutX="25.0" layoutY="30.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="100.0" text="Назад" textAlignment="CENTER" AnchorPane.topAnchor="25.0" />
             </children>
         </AnchorPane>
+      <ImageView fitHeight="145.0" fitWidth="181.0" layoutX="177.0" layoutY="25.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../../../Downloads/Линза.jpg" />
+         </image>
+      </ImageView>
+      <TextField layoutX="193.0" layoutY="146.0" promptText="R1" AnchorPane.topAnchor="146.0" />
+      <TextField layoutX="193.0" layoutY="213.0" promptText="R2" AnchorPane.topAnchor="213.0" />
+      <TextField layoutX="193.0" layoutY="275.0" promptText="Толщина по центру" AnchorPane.topAnchor="275.0" />
+      <TextField layoutX="414.0" layoutY="213.0" promptText="Диаметр Ø" AnchorPane.topAnchor="213.0" />
+      <TextField layoutX="413.0" layoutY="84.0" promptText="Материал детали" />
+      <TextField layoutX="413.0" layoutY="146.0" promptText="N" />
+      <TextField layoutX="414.0" layoutY="176.0" promptText="ΔN" />
+      <TextField layoutX="413.0" layoutY="275.0" promptText="Допуск на толщину по центру" />
+      <TextField layoutX="193.0" layoutY="309.0" promptText="Класс чистоты" />
+      <TextField layoutX="413.0" layoutY="53.0" promptText="Название детали" />
+      <TextField layoutX="193.0" layoutY="176.0" promptText="Св.Ø А" />
+      <TextField layoutX="193.0" layoutY="244.0" promptText="Св.Ø В" />
+      <TextField layoutX="413.0" layoutY="244.0" promptText="Допуск на Ø" />
+      <Button fx:id="mainList_backToMain1" layoutX="438.0" layoutY="309.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="100.0" text="Далее" textAlignment="CENTER" />
     </children>
 </AnchorPane>
