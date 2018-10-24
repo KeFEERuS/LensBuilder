@@ -14,7 +14,7 @@
             <Button fx:id="mainList_backToMain" layoutX="25.0" layoutY="30.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="100.0" text="Назад" textAlignment="CENTER" AnchorPane.topAnchor="25.0" />
             </children>
         </AnchorPane>
-      <ImageView fitHeight="145.0" fitWidth="181.0" layoutX="177.0" layoutY="25.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="113.0" fitWidth="150.0" layoutX="193.0" layoutY="31.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../../../../../Downloads/Линза.jpg" />
          </image>
@@ -22,16 +22,17 @@
       <TextField layoutX="193.0" layoutY="146.0" promptText="R1" AnchorPane.topAnchor="146.0" />
       <TextField layoutX="193.0" layoutY="213.0" promptText="R2" AnchorPane.topAnchor="213.0" />
       <TextField layoutX="193.0" layoutY="275.0" promptText="Толщина по центру" AnchorPane.topAnchor="275.0" />
-      <TextField layoutX="414.0" layoutY="213.0" promptText="Диаметр Ø" AnchorPane.topAnchor="213.0" />
+      <TextField layoutX="413.0" layoutY="213.0" promptText="Диаметр Ø" AnchorPane.topAnchor="213.0" />
       <TextField layoutX="413.0" layoutY="84.0" promptText="Материал детали" />
       <TextField layoutX="413.0" layoutY="146.0" promptText="N" />
-      <TextField layoutX="414.0" layoutY="176.0" promptText="ΔN" />
+      <TextField layoutX="413.0" layoutY="176.0" promptText="ΔN" />
       <TextField layoutX="413.0" layoutY="275.0" promptText="Допуск на толщину по центру" />
       <TextField layoutX="193.0" layoutY="309.0" promptText="Класс чистоты" />
       <TextField layoutX="413.0" layoutY="53.0" promptText="Название детали" />
       <TextField layoutX="193.0" layoutY="176.0" promptText="Св.Ø А" />
       <TextField layoutX="193.0" layoutY="244.0" promptText="Св.Ø В" />
       <TextField layoutX="413.0" layoutY="244.0" promptText="Допуск на Ø" />
-      <Button fx:id="mainList_backToMain1" layoutX="438.0" layoutY="309.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="100.0" text="Далее" textAlignment="CENTER" />
+      <Button fx:id="mainList_backToMain1" layoutX="327.0" layoutY="336.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="100.0" text="Далее" textAlignment="CENTER" AnchorPane.bottomAnchor="8.0" />
+      <TextField layoutX="413.0" layoutY="309.0" promptText="Полнота детали" />
     </children>
 </AnchorPane>
