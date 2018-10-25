@@ -1,9 +1,14 @@
 package sample.controllers;
 
+import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.Parent;
+import javafx.stage.Stage;
 
 public class ControllerMain {
 
@@ -28,15 +33,21 @@ public class ControllerMain {
     @FXML
     void initialize() {
         mainList_newLens.setOnAction(event -> {
+            mainList_newLens.getScene().getWindow().hide();
 
-        });
+            FXMLLoader loader = new FXMLLoader();
+            loader.setLocation(getClass().getResource("/sample/samples/smapleNewLens.fxml"));
 
-        mainList_openDetail.setOnAction(event -> {
+            try {
+                loader.load();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
 
-        });
-
-        mainList_dataBase.setOnAction(event -> {
-
+            Parent root = loader.getRoot();
+            Stage stage = new Stage();
+            stage.setScene(new Scene(root));
+            stage.showAndWait();
         });
 
         mainList_exit.setOnAction(event -> {
