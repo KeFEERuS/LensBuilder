@@ -11,12 +11,12 @@
     <children>
         <AnchorPane prefHeight="400.0" prefWidth="150.0" style="-fx-background-color: #60860E;">
             <children>
-            <Button fx:id="mainList_backToMain" layoutX="25.0" layoutY="30.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="100.0" text="Назад" textAlignment="CENTER" AnchorPane.topAnchor="25.0" />
+                <Button fx:id="newLensList_backToMain" layoutX="25.0" layoutY="324.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="100.0" text="Назад" textAlignment="CENTER" AnchorPane.bottomAnchor="25.0" />
             </children>
         </AnchorPane>
       <ImageView fitHeight="113.0" fitWidth="150.0" layoutX="193.0" layoutY="31.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../../../../../Downloads/Линза.jpg" />
+            <Image url="/resources/image/lensImg.jpg" />
          </image>
       </ImageView>
       <TextField layoutX="193.0" layoutY="146.0" promptText="R1" AnchorPane.topAnchor="146.0" />

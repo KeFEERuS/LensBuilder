@@ -1,3 +1,5 @@
+package logic;
+
 public class ProcessingData {
 
     private double d;

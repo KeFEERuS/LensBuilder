@@ -46,7 +46,38 @@ public class ControllerMain {
 
             Parent root = loader.getRoot();
             Stage stage = new Stage();
+            stage.setTitle("Lens Engineer");
             stage.setScene(new Scene(root));
+            stage.setResizable(false);
+            stage.showAndWait();
+        });
+
+        /**
+        mainList_openDetail.setOnAction(event -> {
+            mainList_openDetail.getScene().getWindow().hide();
+
+            FXMLLoader loader = new FXMLLoader();
+            loader.setLocation(getClass().getResource(""));
+        });
+         **/
+
+        mainList_dataBase.setOnAction(event -> {
+            mainList_dataBase.getScene().getWindow().hide();
+
+            FXMLLoader loader = new FXMLLoader();
+            loader.setLocation(getClass().getResource("/sample/samples/sampleDataBase.fxml"));
+
+            try {
+                loader.load();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+
+            Parent root = loader.getRoot();
+            Stage stage = new Stage();
+            stage.setTitle("Lens Engineer");
+            stage.setScene(new Scene(root));
+            stage.setResizable(false);
             stage.showAndWait();
         });
 
