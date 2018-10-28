@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+
+<AnchorPane prefHeight="400.0" prefWidth="300.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.controllers.ControllerOpenLensModal">
+   <children>
+      <TableView prefHeight="350.0" prefWidth="300.0">
+        <columns>
+          <TableColumn prefWidth="192.0" text="Номер линзы" />
+          <TableColumn prefWidth="106.0" text="Дата создания" />
+        </columns>
+         <columnResizePolicy>
+            <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+         </columnResizePolicy>
+      </TableView>
+      <Button fx:id="openLensModalList_openSelectedLens" layoutX="167.0" layoutY="361.0" mnemonicParsing="false" text="Выбрать" AnchorPane.rightAnchor="70.0" />
+      <Button fx:id="openLensModalList_cancelAndBackToMain" layoutX="74.0" layoutY="361.0" mnemonicParsing="false" text="Отмена" AnchorPane.leftAnchor="70.0" />
+   </children>
+</AnchorPane>

@@ -8,6 +8,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.Parent;
+import javafx.stage.Modality;
 import javafx.stage.Stage;
 
 public class ControllerMain {
@@ -52,14 +53,24 @@ public class ControllerMain {
             stage.showAndWait();
         });
 
-        /**
         mainList_openDetail.setOnAction(event -> {
-            mainList_openDetail.getScene().getWindow().hide();
-
             FXMLLoader loader = new FXMLLoader();
-            loader.setLocation(getClass().getResource(""));
+            loader.setLocation(getClass().getResource("/sample/samples/sampleOpenLensModal.fxml"));
+
+            try {
+                loader.load();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+
+            Parent root = loader.getRoot();
+            Stage openLensModalWindow = new Stage();
+            openLensModalWindow.initModality(Modality.APPLICATION_MODAL);
+            openLensModalWindow.setTitle("Выбор линзы");
+            openLensModalWindow.setScene(new Scene(root));
+            openLensModalWindow.setResizable(false);
+            openLensModalWindow.show();
         });
-         **/
 
         mainList_dataBase.setOnAction(event -> {
             mainList_dataBase.getScene().getWindow().hide();
