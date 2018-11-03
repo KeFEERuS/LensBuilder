@@ -19,20 +19,20 @@
             <Image url="/resources/image/lensImg.jpg" />
          </image>
       </ImageView>
-      <TextField layoutX="193.0" layoutY="146.0" promptText="R1" AnchorPane.topAnchor="146.0" />
-      <TextField layoutX="193.0" layoutY="213.0" promptText="R2" AnchorPane.topAnchor="213.0" />
-      <TextField layoutX="193.0" layoutY="275.0" promptText="Толщина по центру" AnchorPane.topAnchor="275.0" />
-      <TextField layoutX="413.0" layoutY="213.0" promptText="Диаметр Ø" AnchorPane.topAnchor="213.0" />
-      <TextField layoutX="413.0" layoutY="84.0" promptText="Материал детали" />
-      <TextField layoutX="413.0" layoutY="146.0" promptText="N" />
-      <TextField layoutX="413.0" layoutY="176.0" promptText="ΔN" />
-      <TextField layoutX="413.0" layoutY="275.0" promptText="Допуск на толщину по центру" />
-      <TextField layoutX="193.0" layoutY="309.0" promptText="Класс чистоты" />
-      <TextField layoutX="413.0" layoutY="53.0" promptText="Название детали" />
-      <TextField layoutX="193.0" layoutY="176.0" promptText="Св.Ø А" />
-      <TextField layoutX="193.0" layoutY="244.0" promptText="Св.Ø В" />
-      <TextField layoutX="413.0" layoutY="244.0" promptText="Допуск на Ø" />
+      <TextField fx:id="radius1" layoutX="193.0" layoutY="146.0" promptText="R1" AnchorPane.topAnchor="146.0" />
+      <TextField fx:id="radius2" layoutX="193.0" layoutY="213.0" promptText="R2" AnchorPane.topAnchor="213.0" />
+      <TextField fx:id="axisT" layoutX="193.0" layoutY="275.0" promptText="Толщина по центру" AnchorPane.topAnchor="275.0" />
+      <TextField fx:id="diameter" layoutX="413.0" layoutY="213.0" promptText="Диаметр Ø" AnchorPane.topAnchor="213.0" />
+      <TextField fx:id="lensMaterial" layoutX="413.0" layoutY="84.0" promptText="Материал детали" />
+      <TextField fx:id="errorN" layoutX="413.0" layoutY="146.0" promptText="N" />
+      <TextField fx:id="localErrorDN" layoutX="413.0" layoutY="176.0" promptText="ΔN" />
+      <TextField fx:id="limitTC" layoutX="413.0" layoutY="275.0" promptText="Допуск на толщину по центру" />
+      <TextField fx:id="polishingClass" layoutX="193.0" layoutY="309.0" promptText="Класс чистоты" />
+      <TextField fx:id="nameLens" layoutX="413.0" layoutY="53.0" promptText="Название детали" />
+      <TextField fx:id="clearAperture1" layoutX="193.0" layoutY="176.0" promptText="Св.Ø А" />
+      <TextField fx:id="clearAperture2" layoutX="193.0" layoutY="244.0" promptText="Св.Ø В" />
+      <TextField fx:id="limitDiameter" layoutX="413.0" layoutY="244.0" promptText="Допуск на Ø" />
       <Button fx:id="newLensList_Calculation" layoutX="327.0" layoutY="336.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="100.0" text="Далее" textAlignment="CENTER" AnchorPane.bottomAnchor="8.0" />
-      <TextField layoutX="413.0" layoutY="309.0" promptText="Полнота детали" />
+      <TextField fx:id="totalThickness" layoutX="413.0" layoutY="309.0" promptText="Полнота детали" />
     </children>
 </AnchorPane>

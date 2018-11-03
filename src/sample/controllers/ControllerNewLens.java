@@ -9,6 +9,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.stage.Stage;
+import javafx.scene.control.TextField;
 
 public class ControllerNewLens {
 
@@ -19,10 +20,52 @@ public class ControllerNewLens {
     private URL location;
 
     @FXML
-    private Button mainList_backToMain1;
+    private TextField radius1;
+
+    @FXML
+    private TextField lensMaterial;
+
+    @FXML
+    private TextField totalThickness;
+
+    @FXML
+    private TextField localErrorDN;
 
     @FXML
     private Button newLensList_backToMain;
+
+    @FXML
+    private TextField clearAperture2;
+
+    @FXML
+    private TextField clearAperture1;
+
+    @FXML
+    private TextField limitDiameter;
+
+    @FXML
+    private TextField errorN;
+
+    @FXML
+    private TextField diameter;
+
+    @FXML
+    private TextField limitTC;
+
+    @FXML
+    private TextField polishingClass;
+
+    @FXML
+    private TextField nameLens;
+
+    @FXML
+    private TextField axisT;
+
+    @FXML
+    private Button newLensList_Calculation;
+
+    @FXML
+    private TextField radius2;
 
     @FXML
     void initialize() {
