@@ -2,7 +2,6 @@
 
 <?import javafx.scene.paint.*?>
 <?import javafx.scene.text.*?>
-<?import java.lang.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
