@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #A9A9A9;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.controllers.ControllerLensDocument">
+    <children>
+        <AnchorPane prefHeight="400.0" prefWidth="150.0" style="-fx-background-color: #60860E;" />
+      <Button fx:id="lensDocList_print" layoutX="268.0" layoutY="342.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="100.0" text="Печать" textAlignment="CENTER" AnchorPane.bottomAnchor="8.0" AnchorPane.leftAnchor="250.0" />
+      <Button fx:id="lensDocList_done" layoutX="383.0" layoutY="342.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="100.0" text="Готово" textAlignment="CENTER" AnchorPane.bottomAnchor="8.0" AnchorPane.rightAnchor="100.0" />
+      <Label layoutX="217.0" layoutY="81.0" text="Толщина Заготовки:" AnchorPane.rightAnchor="272.0" AnchorPane.topAnchor="80.0" />
+      <Label layoutX="219.0" layoutY="119.0" text="Диаметр Заготовки:" AnchorPane.rightAnchor="272.0" AnchorPane.topAnchor="110.0" />
+      <Label layoutX="249.0" layoutY="159.0" text="Вес заготовки:" AnchorPane.rightAnchor="272.0" AnchorPane.topAnchor="140.0" />
+      <Label layoutX="209.0" layoutY="199.0" text="Стоимость заготовки:" AnchorPane.rightAnchor="272.0" AnchorPane.topAnchor="170.0" />
+      <Label layoutX="191.0" layoutY="238.0" text="Класс сложности детали:" AnchorPane.rightAnchor="272.0" AnchorPane.topAnchor="200.0" />
+      <Label layoutX="197.0" layoutY="41.0" text="Наименование детали:" AnchorPane.rightAnchor="272.0" AnchorPane.topAnchor="50.0" />
+      <Label fx:id="lensDocList_nameLens" layoutX="400.0" layoutY="50.0" text="Label" />
+      <Label fx:id="lensDocList_thickness" layoutX="400.0" layoutY="80.0" text="Label" />
+      <Label fx:id="lensDocList_diameter" layoutX="400.0" layoutY="110.0" text="Label" />
+      <Label fx:id="lensDocList_weight" layoutX="400.0" layoutY="140.0" text="Label" />
+      <Label fx:id="lensDocList_price" layoutX="400.0" layoutY="170.0" text="Label" />
+      <Label fx:id="lensDocList_complexityClass" layoutX="400.0" layoutY="200.0" text="Label" />
+    </children>
+</AnchorPane>
