@@ -88,5 +88,25 @@ public class ControllerNewLens {
             stage.setResizable(false);
             stage.show();
         });
+
+        newLensList_Calculation.setOnAction(event -> {
+            newLensList_Calculation.getScene().getWindow().hide();
+
+            FXMLLoader loader = new FXMLLoader();
+            loader.setLocation(getClass().getResource("/sample/samples/sampleLensDocument.fxml"));
+
+            try {
+                loader.load();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+
+            Parent root = loader.getRoot();
+            Stage stage = new Stage();
+            stage.setTitle("Lens Engineer");
+            stage.setScene(new Scene(root));
+            stage.setResizable(false);
+            stage.show();
+        });
     }
 }

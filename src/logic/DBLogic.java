@@ -25,7 +25,7 @@ public class DBLogic {
                 collumn = stringTokenizer.countTokens();
             }
         }
-        dataBase = String[row][collumn];
+        dataBase = new String[row][collumn];
     }
 
     /** Печать всего массива в консоль */
