@@ -3,6 +3,10 @@ package logic;
 import java.io.*;
 import java.util.StringTokenizer;
 
+/**
+ * В этом блоке будет описание структуры базы данных.
+ */
+
 public class DBLogic {
     private String dataBase[][];
     private String strLine;
