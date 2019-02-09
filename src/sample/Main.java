@@ -5,6 +5,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
+import logic.DBLogic;
 
 import java.io.File;
 import java.io.IOException;
@@ -12,7 +13,13 @@ import java.io.IOException;
 public class Main extends Application {
     private static File workDir = new File(System.getProperty("user.dir") + "/DataBase");
     private static File dataBaseF = new File(System.getProperty("user.dir") + "/DataBase/LensesDB.txt");
+    private static DBLogic logic = new DBLogic();
 
+    /**
+     * Запуск графического интерфейса пользователя.
+     * @param primaryStage
+     * @throws Exception
+     */
     @Override
     public void start(Stage primaryStage) throws Exception{
         Parent root = FXMLLoader.load(getClass().getResource("samples/sampleMain.fxml"));
@@ -22,6 +29,11 @@ public class Main extends Application {
         primaryStage.show();
     }
 
+    /**
+     * Проверка и создание(если нужно) каталока и файла Базы Данных,
+     * Отправка файла БД в логику БД.
+     * @throws IOException
+     */
     public static void databaseSearch() throws IOException {
         if (!workDir.exists()) {
             workDir.mkdir();
@@ -31,8 +43,15 @@ public class Main extends Application {
                 boolean create = dataBaseF.createNewFile();
             }
         }
+
+        logic.generateDB(dataBaseF);
     }
 
+    /**
+     * Стартовый метод приложения.
+     * @param args
+     * @throws IOException
+     */
     public static void main(String[] args) throws IOException {
         databaseSearch();
         launch(args);

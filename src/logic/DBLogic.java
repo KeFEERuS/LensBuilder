@@ -11,6 +11,8 @@ public class DBLogic {
     private String dataBase[][];
     private String strLine;
 
+    public DBLogic() {}
+
     /** Создать массив X на Y */
     public DBLogic(int x, int y) {
         dataBase = new String[x][y];
@@ -45,6 +47,9 @@ public class DBLogic {
     /** Метод проверяет и передаёт файл в createDB для перезаписи в массив */
     public void generateDB(File file) throws IOException {
         try {
+            BufferedReader br = new BufferedReader(new InputStreamReader(new FileInputStream(file)));
+            String line;
+            while ((line = br.readLine()) != null)
             createDB(file);
         } catch (IOException e) {
             e.printStackTrace();
