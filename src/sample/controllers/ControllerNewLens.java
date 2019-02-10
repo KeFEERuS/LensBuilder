@@ -10,6 +10,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.stage.Stage;
 import javafx.scene.control.TextField;
+import logic.ProcessingData;
 
 public class ControllerNewLens {
 
@@ -90,6 +91,11 @@ public class ControllerNewLens {
         });
 
         newLensList_Calculation.setOnAction(event -> {
+            ProcessingData calc = new ProcessingData();
+            double diam = calc.getLimitDiameter(Double.valueOf(diameter.getText()));
+            ControllerLensDocument lensDocument = new ControllerLensDocument();
+            lensDocument.setLensDocList_diameter(diam);
+
             newLensList_Calculation.getScene().getWindow().hide();
 
             FXMLLoader loader = new FXMLLoader();

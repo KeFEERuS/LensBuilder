@@ -65,4 +65,8 @@ public class ControllerLensDocument {
             stage.show();
         });
     }
+
+    public void setLensDocList_diameter(double diam) {
+        lensDocList_diameter.setText(String.valueOf(diam));
+    }
 }
