@@ -43,9 +43,30 @@ public class ControllerLensDocument {
     @FXML
     private Label lensDocList_diameter;
 
+    public void setLensDocList_nameLens(String lensDocList_nameLens) {
+        this.lensDocList_nameLens.setText(lensDocList_nameLens);
+    }
+
+    public void setLensDocList_thickness(Label lensDocList_thickness) {
+        this.lensDocList_thickness = lensDocList_thickness;
+    }
+
+    public void setLensDocList_complexityClass(Label lensDocList_complexityClass) {
+        this.lensDocList_complexityClass = lensDocList_complexityClass;
+    }
+
+    public void setLensDocList_price(Label lensDocList_price) {
+        this.lensDocList_price = lensDocList_price;
+    }
+
+    public void setLensDocList_weight(Label lensDocList_weight) {
+        this.lensDocList_weight = lensDocList_weight;
+    }
+
     public void setLensDocList_diameter(double diametr) {
         lensDocList_diameter.setText(String.valueOf(diametr));
     }
+
     @FXML
     void initialize() {
         lensDocList_done.setOnAction(event -> {
