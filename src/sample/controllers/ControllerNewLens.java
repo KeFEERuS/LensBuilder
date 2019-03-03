@@ -13,6 +13,13 @@ import javafx.scene.control.TextField;
 import logic.ProcessingData;
 
 public class ControllerNewLens {
+    ProcessingData calc = new ProcessingData();
+
+    private double diam;
+
+    public double getDiam() {
+        return diam;
+    }
 
     @FXML
     private ResourceBundle resources;
@@ -91,10 +98,7 @@ public class ControllerNewLens {
         });
 
         newLensList_Calculation.setOnAction(event -> {
-            ProcessingData calc = new ProcessingData();
-            double diam = calc.getLimitDiameter(Double.valueOf(diameter.getText()));
-            ControllerLensDocument lensDocument = new ControllerLensDocument();
-            lensDocument.setLensDocList_diameter(diam);
+            diam = calc.getLimitDiameter(Double.valueOf(diameter.getText()));
 
             newLensList_Calculation.getScene().getWindow().hide();
 
@@ -111,6 +115,8 @@ public class ControllerNewLens {
             Stage stage = new Stage();
             stage.setTitle("Lens Engineer");
             stage.setScene(new Scene(root));
+            ControllerLensDocument controllerLensDocument = loader.getController();
+            controllerLensDocument.setLensDocList_diameter(diam);
             stage.setResizable(false);
             stage.show();
         });

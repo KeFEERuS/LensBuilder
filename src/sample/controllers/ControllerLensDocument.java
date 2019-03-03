@@ -43,9 +43,13 @@ public class ControllerLensDocument {
     @FXML
     private Label lensDocList_diameter;
 
+    public void setLensDocList_diameter(double diametr) {
+        lensDocList_diameter.setText(String.valueOf(diametr));
+    }
     @FXML
     void initialize() {
         lensDocList_done.setOnAction(event -> {
+
             lensDocList_done.getScene().getWindow().hide();
 
             FXMLLoader loader = new FXMLLoader();
@@ -64,9 +68,5 @@ public class ControllerLensDocument {
             stage.setResizable(false);
             stage.show();
         });
-    }
-
-    public void setLensDocList_diameter(double diam) {
-        lensDocList_diameter.setText(String.valueOf(diam));
     }
 }
