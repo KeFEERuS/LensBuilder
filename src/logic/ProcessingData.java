@@ -2,9 +2,11 @@ package logic;
 
 public class ProcessingData {
 
-    private double d; //диаметр готовой линзы
-    private double mass; //масса итоговой заготовки
-    private double price; //цена заготовки
+    private double d;           //диаметр готовой линзы
+    private double mass;        //масса итоговой заготовки
+    private double price;       //цена заготовки
+    private double volume;      //объём сегмета линзы
+    private double density;    //материал стекла
 
     /**
      * Этот метод возвращает оптимальный диаметр для заготовки
@@ -37,7 +39,7 @@ public class ProcessingData {
      * его плотность в г/см^3
      */
     private double getDensity(String lensMaterial) {
-
+        return density;
     }
 
     /**
@@ -56,5 +58,16 @@ public class ProcessingData {
     public double getPriceLens(double mass, double price) {
         this.price = mass * price;
         return this.price;
+    }
+
+    /**
+     * Этот метод возвращает объём одной из частей линзы.
+     * На вход получает радиус рабочей поверхности и диаметр.
+     */
+    public double getVolumePart(double radius, double diametr) {
+        double diamR = diametr / 2;                                                     //радиус основания сегмента
+        double h = radius - Math.sqrt((Math.pow(radius, 2) - Math.pow(diamR, 2)));      //высота сегмента от основания
+        volume = ((Math.PI * Math.pow(h, 2)) * (radius - ((1 / 3) * h)));               //объём вычисляемого сегмента
+        return volume;
     }
 }
