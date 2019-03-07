@@ -16,10 +16,7 @@ public class ControllerNewLens {
     ProcessingData calc = new ProcessingData();
 
     private double diam;
-
-    public double getDiam() {
-        return diam;
-    }
+    private double volumePart;
 
     @FXML
     private ResourceBundle resources;
@@ -100,6 +97,11 @@ public class ControllerNewLens {
         newLensList_Calculation.setOnAction(event -> {
             diam = calc.getLimitDiameter(Double.valueOf(diameter.getText()));
 
+            System.out.println("Диаметр заготовки из расчётов: " + diam);
+
+            //тест расчёта объёма части линзы по радиусу и диаметру
+            volumePart = calc.getVolumePart(Double.valueOf(radius1.getText()), diam);
+
             newLensList_Calculation.getScene().getWindow().hide();
 
             FXMLLoader loader = new FXMLLoader();
@@ -117,6 +119,7 @@ public class ControllerNewLens {
             stage.setScene(new Scene(root));
             ControllerLensDocument controllerLensDocument = loader.getController();
             controllerLensDocument.setLensDocList_diameter(diam);
+            controllerLensDocument.setLensDocList_weight(volumePart);
             stage.setResizable(false);
             stage.show();
         });

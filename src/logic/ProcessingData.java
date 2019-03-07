@@ -6,7 +6,8 @@ public class ProcessingData {
     private double mass;        //масса итоговой заготовки
     private double price;       //цена заготовки
     private double volume;      //объём сегмета линзы
-    private double density;    //материал стекла
+    private double volumeLens;  //объём заготовки
+    private double density;     //материал стекла
 
     /**
      * Этот метод возвращает оптимальный диаметр для заготовки
@@ -66,8 +67,23 @@ public class ProcessingData {
      */
     public double getVolumePart(double radius, double diametr) {
         double diamR = diametr / 2;                                                     //радиус основания сегмента
+        System.out.println("Радиус основания сегмента: " + diamR);
+
         double h = radius - Math.sqrt((Math.pow(radius, 2) - Math.pow(diamR, 2)));      //высота сегмента от основания
-        volume = ((Math.PI * Math.pow(h, 2)) * (radius - ((1 / 3) * h)));               //объём вычисляемого сегмента
+        System.out.println("Квадрат радиуса: " + Math.pow(radius, 2));
+        System.out.println("Квадрат радиуса основания: " + Math.pow(diamR, 2));
+        System.out.println("Высота сегмента от основания: " + h);
+
+        volume = ((Math.PI * Math.pow(h, 2)) * (radius - (h / 3)));               //объём вычисляемого сегмента
+        System.out.println("Объём вычисленного сегмента: " + volume);
+
         return volume;
+    }
+
+    /**
+     *
+     */
+    public double getVolumeLens(double volume) {
+        return volumeLens;
     }
 }

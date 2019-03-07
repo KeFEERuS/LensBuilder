@@ -59,8 +59,8 @@ public class ControllerLensDocument {
         this.lensDocList_price = lensDocList_price;
     }
 
-    public void setLensDocList_weight(Label lensDocList_weight) {
-        this.lensDocList_weight = lensDocList_weight;
+    public void setLensDocList_weight(double weight) {
+        lensDocList_weight.setText(String.valueOf(weight));
     }
 
     public void setLensDocList_diameter(double diametr) {
