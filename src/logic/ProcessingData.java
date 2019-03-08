@@ -6,6 +6,7 @@ public class ProcessingData {
     private double mass;        //масса итоговой заготовки
     private double price;       //цена заготовки
     private double volume;      //объём сегмета линзы
+    private double stokRadius;  //припуск на радиус
     private double volumeLens;  //объём заготовки
     private double density;     //материал стекла
 
@@ -31,6 +32,11 @@ public class ProcessingData {
         } else if (x <= 100) {
             return d = (x + 2.5);
         } else return d = (x + 4);
+    }
+
+    public double getLimitRadius(double radius, double diametr) {
+        stokRadius = 0.3 * (3 + Math.pow((radius / diametr), 2));
+        return stokRadius;
     }
 
     /**
@@ -81,7 +87,7 @@ public class ProcessingData {
     }
 
     /**
-     *
+     * Метод для полного расчёта объёма заготовки
      */
     public double getVolumeLens(double volume) {
         return volumeLens;
