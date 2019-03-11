@@ -5,7 +5,8 @@ public class ProcessingData {
     private double d;           //диаметр готовой линзы
     private double mass;        //масса итоговой заготовки
     private double price;       //цена заготовки
-    private double volume;      //объём сегмета линзы
+    private double volumePart;  //объём сегмета линзы
+    private double volumeCyl;   //объём цилиндра
     private double stokRadius;  //припуск на радиус
     private double volumeLens;  //объём заготовки
     private double density;     //материал стекла
@@ -68,28 +69,69 @@ public class ProcessingData {
     }
 
     /**
-     * Этот метод возвращает объём одной из частей линзы.
-     * На вход получает радиус рабочей поверхности и диаметр.
+     * Метод для получения объёма сегмента линзы
+     *
+     * Основные формулы:
+     * V = PI * h^2 * (R - h / 3)   - расчёт объёма шарового сегмента
+     * где:
+     * V    - объём
+     * PI   - 3.14
+     * h    - высота сегмента
+     * R    - радиус сегмента
+     *
+     * Входные данные:
+     * radius   - радиус одной из сторон линзы
+     * diameter - диаметр сегмента
+     *
+     * Промежуточные данные:
+     * rBase    - радиус основания сегмента
+     * hSeg     - высота сегмента
+     *
+     * Выходные данные:
+     * volumePart - расчитаный объём сегмента
+     *
+     * Описание метода:
      */
-    public double getVolumePart(double radius, double diametr) {
-        double diamR = diametr / 2;                                                     //радиус основания сегмента
-        System.out.println("Радиус основания сегмента: " + diamR);
+    public double getVolumePart(double radius, double diameter) {
+        if (radius == 0 | diameter == 0) {
+            return volumePart = 0;
+        } else {
+            double rBase = diameter / 2;                                                             //радиус основания сегмента
+            double hSeg = Math.abs(radius) - Math.sqrt((Math.pow(radius, 2) - Math.pow(rBase, 2)));  //высота сегмента от основания
+            volumePart = ((Math.PI * Math.pow(hSeg, 2)) * (Math.abs(radius) - (hSeg / 3)));          //объём вычисляемого сегмента
 
-        double h = radius - Math.sqrt((Math.pow(radius, 2) - Math.pow(diamR, 2)));      //высота сегмента от основания
-        System.out.println("Квадрат радиуса: " + Math.pow(radius, 2));
-        System.out.println("Квадрат радиуса основания: " + Math.pow(diamR, 2));
-        System.out.println("Высота сегмента от основания: " + h);
+            if (radius < 0)
+                return -volumePart;
+            else return volumePart;
+        }
+    }
 
-        volume = ((Math.PI * Math.pow(h, 2)) * (radius - (h / 3)));               //объём вычисляемого сегмента
-        System.out.println("Объём вычисленного сегмента: " + volume);
-
-        return volume;
+    /**
+     * Метод для получения объёма цилиндрической части линзы
+     *
+     * Основные формулы:
+     * V = PI * r^2 * h     - расчёт объёма цилиндра
+     * где:
+     * V    - объём
+     * PI   - 3.14
+     * r    - радиус основания цилиндра
+     * h    - высота цилиндра
+     */
+    public double getVolumeCyl(double diameter, double hCyl) {
+        double rCyl = diameter / 2;
+        volumeCyl = Math.PI * Math.pow(rCyl, 2) * hCyl;
+        return volumeCyl;
     }
 
     /**
      * Метод для полного расчёта объёма заготовки
+     * volumeLens   - объём линзы
+     * volumeCyl    - объём цилиндра (средний сегмент)
+     * volumeR1     - объём шарового сегмента первой стороны (левый сегмент)
+     * volumeR2     - объём шарового сегмента второй стороны (правый сегмент)
      */
-    public double getVolumeLens(double volume) {
+    public double getVolumeLens(double volumeCyl, double volumeR1, double volumeR2) {
+        volumeLens = volumeCyl + volumeR1 + volumeR2;
         return volumeLens;
     }
 }
