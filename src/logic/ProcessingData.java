@@ -7,7 +7,7 @@ public class ProcessingData {
     private double price;       //цена заготовки
     private double volumePart;  //объём сегмета линзы
     private double volumeCyl;   //объём цилиндра
-    private double stokRadius;  //припуск на радиус
+    private double stockRadius;  //припуск на радиус
     private double volumeLens;  //объём заготовки
     private double density;     //материал стекла
 
@@ -35,9 +35,22 @@ public class ProcessingData {
         } else return d = (x + 4);
     }
 
+    /**
+     * Метод для расчёта припуска на радиус
+     */
     public double getLimitRadius(double radius, double diametr) {
-        stokRadius = 0.3 * (3 + Math.pow((radius / diametr), 2));
-        return stokRadius;
+        if (radius < 0) {
+            stockRadius =  - (0.3 * (3 + Math.pow((Math.abs(radius) / diametr), 2)));
+            stockRadius = radius + stockRadius;
+            return stockRadius;
+        }
+        if (radius > 0) {
+            stockRadius = 0.3 * (3 + Math.pow((Math.abs(radius) / diametr), 2));
+            stockRadius = radius + stockRadius;
+            return stockRadius;
+        }
+        stockRadius = 0.3 * (3 + Math.pow((radius / diametr), 2));
+        return stockRadius;
     }
 
     /**

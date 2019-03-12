@@ -69,6 +69,12 @@ public class ControllerLensDocument {
 
     @FXML
     void initialize() {
+        lensDocList_price.setText("129.06 руб.");                                //!!!!!!!!!!
+        lensDocList_weight.setText("0.012 кг.");                                 //!!!!!!!!!!
+        lensDocList_thickness.setText("4.6 мм");                                 //!!!!!!!!!!
+        lensDocList_diameter.setText("40 мм");                                   //!!!!!!!!!!
+        lensDocList_complexityClass.setText("8й класс");                         //!!!!!!!!!!
+        lensDocList_nameLens.setText("БУ6.897-258.005-001");                     //!!!!!!!!!!
         lensDocList_done.setOnAction(event -> {
 
             lensDocList_done.getScene().getWindow().hide();

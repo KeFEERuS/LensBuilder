@@ -74,6 +74,20 @@ public class ControllerNewLens {
 
     @FXML
     void initialize() {
+        nameLens.setText("БУ6.897-258.005-001");                        //!!!!!!!!!!
+        lensMaterial.setText("К8");                                     //!!!!!!!!!!
+        radius1.setText("0");                                           //!!!!!!!!!!
+        clearAperture1.setText("35");                                   //!!!!!!!!!!
+        radius2.setText("137.58");                                      //!!!!!!!!!!
+        clearAperture2.setText("35");                                   //!!!!!!!!!!
+        axisT.setText("4.2");                                           //!!!!!!!!!!
+        polishingClass.setText("IV");                                   //!!!!!!!!!!
+        errorN.setText("2");                                            //!!!!!!!!!!
+        localErrorDN.setText("0.3");                                    //!!!!!!!!!!
+        diameter.setText("38");                                         //!!!!!!!!!!
+        limitDiameter.setText("f7");                                    //!!!!!!!!!!
+        limitTC.setText("±0.1");                                        //!!!!!!!!!!
+        totalThickness.setText("4.2");                                  //!!!!!!!!!!
         newLensList_backToMain.setOnAction(event -> {
             newLensList_backToMain.getScene().getWindow().hide();
 
@@ -97,8 +111,6 @@ public class ControllerNewLens {
         newLensList_Calculation.setOnAction(event -> {
             diam = calc.getLimitDiameter(Double.valueOf(diameter.getText()));
 
-            System.out.println("Диаметр заготовки из расчётов: " + diam);
-
             //тест расчёта объёма части линзы по радиусу и диаметру
             volumePart = calc.getVolumePart(Double.valueOf(radius1.getText()), diam);
 
@@ -118,8 +130,8 @@ public class ControllerNewLens {
             stage.setTitle("Lens Engineer");
             stage.setScene(new Scene(root));
             ControllerLensDocument controllerLensDocument = loader.getController();
-            controllerLensDocument.setLensDocList_diameter(diam);
-            controllerLensDocument.setLensDocList_weight(volumePart);
+            //controllerLensDocument.setLensDocList_diameter(diam);
+            //controllerLensDocument.setLensDocList_weight(volumePart);
             stage.setResizable(false);
             stage.show();
         });
