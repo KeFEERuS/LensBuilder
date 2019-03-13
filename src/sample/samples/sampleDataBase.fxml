@@ -7,24 +7,24 @@
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #A9A9A9;" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.controllers.ControllerDataBase">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #A9A9A9;" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.controllers.ControllerDataBase">
     <children>
         <AnchorPane prefHeight="400.0" prefWidth="150.0" style="-fx-background-color: #60860E;">
             <children>
                 <Button fx:id="dataBaseList_backToMain" layoutX="25.0" layoutY="324.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="100.0" text="Назад" textAlignment="CENTER" AnchorPane.bottomAnchor="25.0" />
             </children>
         </AnchorPane>
-      <TabPane layoutX="150.0" layoutY="4.0" prefHeight="393.0" prefWidth="450.0" tabClosingPolicy="UNAVAILABLE" AnchorPane.bottomAnchor="0.0" AnchorPane.topAnchor="0.0">
+      <TabPane id="dataBasePane" layoutX="150.0" layoutY="4.0" prefHeight="393.0" prefWidth="450.0" tabClosingPolicy="UNAVAILABLE" AnchorPane.bottomAnchor="0.0" AnchorPane.topAnchor="0.0">
         <tabs>
-          <Tab text="Материалы">
+          <Tab id="materialT" text="Материалы">
             <content>
               <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                      <children>
-                        <TableView layoutY="-2.0" prefHeight="375.0" prefWidth="450.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+                        <TableView id="materialT" fx:id="materialT" layoutY="-2.0" prefHeight="375.0" prefWidth="450.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
                           <columns>
-                            <TableColumn prefWidth="101.0" text="Марка стекла" />
-                              <TableColumn prefWidth="116.0" text="Плотность, г/см3" />
-                              <TableColumn prefWidth="100.0" text="Цена за 1кг" />
+                            <TableColumn id="markaS" fx:id="markaS" prefWidth="101.0" text="Марка стекла" />
+                              <TableColumn id="density" fx:id="density" prefWidth="116.0" text="Плотность, г/см3" />
+                              <TableColumn id="priceForKG" fx:id="priceM" prefWidth="100.0" text="Цена за 1кг" />
                           </columns>
                            <columnResizePolicy>
                               <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
@@ -38,11 +38,11 @@
             <content>
               <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                      <children>
-                         <TableView layoutY="-2.0" prefHeight="375.0" prefWidth="450.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+                         <TableView id="lensT" fx:id="lensT" layoutY="-2.0" prefHeight="375.0" prefWidth="450.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
                           <columns>
-                            <TableColumn prefWidth="182.0" text="Номер линзы" />
-                            <TableColumn prefWidth="117.0" text="Марка стекла" />
-                              <TableColumn prefWidth="113.0" text="Цена заготовки" />
+                            <TableColumn id="lensNum" fx:id="lensNum" prefWidth="182.0" text="Номер линзы" />
+                            <TableColumn id="materiaL" fx:id="materialL" prefWidth="117.0" text="Марка стекла" />
+                              <TableColumn id="priceL" fx:id="priceL" prefWidth="113.0" text="Цена заготовки" />
                           </columns>
                            <columnResizePolicy>
                               <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />

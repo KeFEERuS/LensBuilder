@@ -11,8 +11,10 @@ import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 import resources.OpenLens;
+import sample.Main;
 
 public class ControllerOpenLensModal {
+    Main mainApp = new Main();
 
     @FXML
     private ResourceBundle resources;
@@ -43,7 +45,7 @@ public class ControllerOpenLensModal {
 
         openLensModalList_columnNumberLens.setSortType(TableColumn.SortType.DESCENDING);
 
-        ObservableList<OpenLens> list = getLensList();
+        ObservableList<OpenLens> list = mainApp.getLensList();
         openLensModalList_tableLensOpen.setItems(list);
 
         openLensModalList_cancelAndBackToMain.setOnAction(event -> {
@@ -52,15 +54,5 @@ public class ControllerOpenLensModal {
 
         openLensModalList_openSelectedLens.setOnAction(event -> {
         });
-    }
-
-    private ObservableList<OpenLens> getLensList() {
-        OpenLens lens1 = new OpenLens(1, "БУ6.897-258.005-001", "К8", "129.06", "12.08.2018");
-        OpenLens lens2 = new OpenLens(2, "УФ.587698.025", "ТК21", "348.5", "18.08.2018");
-        OpenLens lens3 = new OpenLens(3, "ГРОМ-01.598.001", "ТФ105", "83.67", "20.08.2018");
-        OpenLens lens4 = new OpenLens(4, "АС7-002", "СТК12", "1580.5", "26.08.2018");
-
-        ObservableList<OpenLens> list = FXCollections.observableArrayList(lens1, lens2, lens3, lens4);
-        return list;
     }
 }
